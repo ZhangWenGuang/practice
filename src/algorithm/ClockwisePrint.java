@@ -19,6 +19,14 @@ public class ClockwisePrint {
 		System.out.println();
 		int[][] data2 = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
 		print(data2);
+
+		System.out.println();
+		int[][] data3 = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}};
+		print(data3);
+
+		System.out.println();
+		int[][] data4 = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}, {10, 11, 12}};
+		print(data4);
 		
 	}
 	
@@ -48,11 +56,11 @@ public class ClockwisePrint {
 				System.out.println(data[++x][y]);
 			}
 			// 下
-			while (y > c1) {
+			while (y > c1 && r1 != r2) {
 				System.out.println(data[x][--y]);
 			}
 			// 左
-			while (x > r1 + 1) {
+			while (x > r1 + 1 && c1 != c2) {
 				System.out.println(data[--x][y]);
 			}
 			r1++;
