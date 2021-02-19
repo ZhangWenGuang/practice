@@ -36,21 +36,24 @@ public class ClockwisePrint {
 		while(r1 <= r2 && c1 <= c2) {
 			int x = r1;
 			int y = c1;
+
+
+			System.out.println(data[x][y]);
 			// 上
 			while (y < c2) {
-				System.out.println(data[x][y++]);
+				System.out.println(data[x][++y]);
 			};
 			// 右
 			while (x < r2) {
-				System.out.println(data[x++][y]);
+				System.out.println(data[++x][y]);
 			}
 			// 下
 			while (y > c1) {
-				System.out.println(data[x][y--]);
+				System.out.println(data[x][--y]);
 			}
 			// 左
-			while (x > r1) {
-				System.out.println(data[x--][y]);
+			while (x > r1 + 1) {
+				System.out.println(data[--x][y]);
 			}
 			r1++;
 			r2--;
