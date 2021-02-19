@@ -4,32 +4,32 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * 3. Êı×éÖĞÖØ¸´µÄÊı×Ö
+ * 3. æ•°ç»„ä¸­é‡å¤çš„æ•°å­—
  * @author ZhangWenGuang
  *
  */
 public class RepeatNumber {
 
 	/*
-		ÌâÄ¿ÃèÊö
-		1.ÔÚÒ»¸ö³¤¶ÈÎª n µÄÊı×éÀïµÄËùÓĞÊı×Ö¶¼ÔÚ 0 µ½ n-1 µÄ·¶Î§ÄÚ¡£
-		2.Êı×éÖĞÄ³Ğ©Êı×ÖÊÇÖØ¸´µÄ£¬µ«²»ÖªµÀÓĞ¼¸¸öÊı×ÖÊÇÖØ¸´µÄ£¬Ò²²»ÖªµÀÃ¿¸öÊı×ÖÖØ¸´¼¸´Î¡£
-		3.ÇëÕÒ³öÊı×éÖĞÈÎÒâÒ»¸öÖØ¸´µÄÊı×Ö¡£
+		é¢˜ç›®æè¿°
+		1.åœ¨ä¸€ä¸ªé•¿åº¦ä¸º n çš„æ•°ç»„é‡Œçš„æ‰€æœ‰æ•°å­—éƒ½åœ¨ 0 åˆ° n-1 çš„èŒƒå›´å†…ã€‚
+		2.æ•°ç»„ä¸­æŸäº›æ•°å­—æ˜¯é‡å¤çš„ï¼Œä½†ä¸çŸ¥é“æœ‰å‡ ä¸ªæ•°å­—æ˜¯é‡å¤çš„ï¼Œä¹Ÿä¸çŸ¥é“æ¯ä¸ªæ•°å­—é‡å¤å‡ æ¬¡ã€‚
+		3.è¯·æ‰¾å‡ºæ•°ç»„ä¸­ä»»æ„ä¸€ä¸ªé‡å¤çš„æ•°å­—ã€‚
 	 */
 	public static void main(String[] args) {
-		// 1ÄÉÃë=0.000001 ºÁÃë
+		// 1çº³ç§’=0.000001 æ¯«ç§’
 		long startTime = System.nanoTime();
 		int[] nums = {2, 3, 1, 0, 2, 5};
 //		method1(nums);
 //		method2(nums);
 		method3(nums);
 		long endTime = System.nanoTime();
-		System.out.println("ÏûºÄÊ±¼ä£º" + (double)(endTime - startTime) / 1000000 + "ms");
+		System.out.println("æ¶ˆè€—æ—¶é—´ï¼š" + (double)(endTime - startTime) / 1000000 + "ms");
 		
 	}
 	
 	public static void method1(int[] nums) {
-		// ×Ô¼ºÀí½âµÄ
+		// è‡ªå·±ç†è§£çš„
 		Set<Integer> list = new HashSet<Integer>();
 		for (int num : nums) {
 			if (list.contains(num)) {
@@ -40,9 +40,9 @@ public class RepeatNumber {
 		}
 	}
 	
-	// µİ¹éÍ£²»ÏÂÀ´
+	// é€’å½’åœä¸ä¸‹æ¥
 	public static void method2(int[] nums) {
-		// ÔÚÌõ¼ş1ÏÂ£¬¿ÉÒÔ½«Öµ1µ÷Õûµ½Î»ÖÃ1£¬Èç¹û¸ÃÎ»ÖÃ´æÔÚ¸ÃÖµ¼´ÖØ¸´
+		// åœ¨æ¡ä»¶1ä¸‹ï¼Œå¯ä»¥å°†å€¼1è°ƒæ•´åˆ°ä½ç½®1ï¼Œå¦‚æœè¯¥ä½ç½®å­˜åœ¨è¯¥å€¼å³é‡å¤
 		for (int i = 0; i < nums.length; i++) {
 			exchange(nums, i);
 		}
@@ -54,7 +54,7 @@ public class RepeatNumber {
 				System.out.println(nums[index]);
 				return;
 			}
-			int temp = nums[index]; // ¼ÈÊÇµ±Ç°ÖµÒ²ÊÇÄ¿±êµÄÏÂ±ê
+			int temp = nums[index]; // æ—¢æ˜¯å½“å‰å€¼ä¹Ÿæ˜¯ç›®æ ‡çš„ä¸‹æ ‡
 			nums[index] = nums[temp];
 			nums[temp] = temp;
 			exchange(nums, index);
@@ -62,8 +62,8 @@ public class RepeatNumber {
 	}
 	
 	/*
-	 * ×îÓÅ
-	 * whileÑ­»·£¬returnÍ£Ö¹
+	 * æœ€ä¼˜
+	 * whileå¾ªç¯ï¼Œreturnåœæ­¢
 	 */
 	public static boolean method3(int[] nums) {
 		if (nums == null) return false;

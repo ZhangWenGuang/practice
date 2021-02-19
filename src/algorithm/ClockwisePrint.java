@@ -1,14 +1,14 @@
 package algorithm;
 
 /**
- * 29. Ë³Ê±Õë´òÓ¡¾ØÕó
+ * 29. é¡ºæ—¶é’ˆæ‰“å°çŸ©é˜µ
  * @author ZhangWenGuang
  *
  */
 public class ClockwisePrint {
 
 	/*
-	 * °´Ë³Ê±ÕëµÄ·½Ïò£¬´ÓÍâµ½Àï´òÓ¡¾ØÕóµÄÖµ¡£ÏÂÍ¼µÄ¾ØÕó´òÓ¡½á¹ûÎª£º1, 2, 3, 4, 8, 12, 16, 15, 14, 13, 9, 5, 6, 7, 11, 10
+	 * æŒ‰é¡ºæ—¶é’ˆçš„æ–¹å‘ï¼Œä»å¤–åˆ°é‡Œæ‰“å°çŸ©é˜µçš„å€¼ã€‚ä¸‹å›¾çš„çŸ©é˜µæ‰“å°ç»“æœä¸ºï¼š1, 2, 3, 4, 8, 12, 16, 15, 14, 13, 9, 5, 6, 7, 11, 10
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -23,7 +23,7 @@ public class ClockwisePrint {
 	}
 	
 	/*
-	 * ÒÔÈ¦Îªµ¥Î»½øĞĞÑ­»·£¬Í¨¹ır1 r1 c1 c2½¨Á¢Ã¿È¦µÄ×ø±ê·¶Î§
+	 * ä»¥åœˆä¸ºå•ä½è¿›è¡Œå¾ªç¯ï¼Œé€šè¿‡r1 r1 c1 c2å»ºç«‹æ¯åœˆçš„åæ ‡èŒƒå›´
 	 */
 	private static void print(int[][] data) {
 		if (data == null || data.length == 0 || data[0].length == 0) return;
@@ -36,19 +36,19 @@ public class ClockwisePrint {
 		while(r1 <= r2 && c1 <= c2) {
 			int x = r1;
 			int y = c1;
-			// ÉÏ
+			// ä¸Š
 			while (y < c2) {
 				System.out.println(data[x][y++]);
 			};
-			// ÓÒ
+			// å³
 			while (x < r2) {
 				System.out.println(data[x++][y]);
 			}
-			// ÏÂ
+			// ä¸‹
 			while (y > c1) {
 				System.out.println(data[x][y--]);
 			}
-			// ×ó
+			// å·¦
 			while (x > r1) {
 				System.out.println(data[x--][y]);
 			}
