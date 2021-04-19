@@ -1,4 +1,4 @@
-package algorithm;
+package algorithm.arrays;
 
 /**
  * 29. 顺时针打印矩阵

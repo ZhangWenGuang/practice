@@ -1,4 +1,4 @@
-package algorithm;
+package algorithm.arrays;
 
 /**
  * 5. 替换空格

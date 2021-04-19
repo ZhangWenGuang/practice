@@ -1,4 +1,4 @@
-package algorithm;
+package algorithm.arrays;
 
 /**
  * 4. 二维数组中的查找
