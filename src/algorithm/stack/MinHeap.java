@@ -22,10 +22,11 @@ public class MinHeap {
 	 */
 	
 	public static void main(String[] args) {
-		int[] nums = {2, 6, 3, 9, 5, 1, 3, 7, 4};
+//		int[] nums = {2, 6, 3, 9, 5, 1, 3, 7, 4};
 //		getLeastNumbers(nums, 5);
+		int[] nums = {9, 1, 3, 7, 5};
 		
-		getLeastNumbers_Solution(nums, 3);
+		getLeastNumbers_Solution(nums, 4);
 	}
 	
 	public static void getLeastNumbers(int[] nums, int k) {
@@ -58,17 +59,22 @@ public class MinHeap {
 		
 	}
 
+	/**
+	 *
+	 * @param nums
+	 * @param i  在排序过程中，满足个数的下标
+	 */
 	private static void findKtnSmallest(int[] nums, int i) {
 		int l = 0;
 		int h = nums.length - 1;
 		while (l < h) {
-			int j = partition(nums, l, h);
+			int j = partition(nums, l, h); // 经过比较后的数组截止下标，其中一边的值小于中间值，中间值下标
 			
 			if (j == i)
 				break;
-			if (j > i) 
-				h = j - 1;
-			else
+			if (j > i)  // 右边的都比中间值大
+				h = j - 1; // j == i
+			else // 左边的都比中间值小
 				l = j + 1;
 		}
 	}
